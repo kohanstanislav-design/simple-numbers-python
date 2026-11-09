@@ -1,0 +1,22 @@
+n = int(input("Введіть N: "))
+
+total = 0
+simple_numbers = []
+
+for number in range(2, n + 1):
+    is_prime = True
+
+    for divisor in range(2, number):
+        if number % divisor == 0:
+            is_prime = False
+            break
+
+    if is_prime:
+        total += number
+        simple_numbers.append(number)
+
+print(
+    f"Сума простих чисел від 2 до {n} "
+    f"({' + '.join(map(str, simple_numbers))}): {total}"
+)
+
